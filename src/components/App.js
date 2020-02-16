@@ -6,6 +6,7 @@ import { Route, Router, Redirect } from 'react-router-dom';
 import ActivitiesList from './activities/ActivitiesList'
 import ActivityLogsList from './activity_logs/ActivityLogsList'
 import ActivityLogsNew from './activity_logs/ActivityLogsNew'
+import ActivityLogsEdit from './activity_logs/ActivityLogsEdit'
 import AssistantsList from './assistants/AssistantsList'
 import BabiesList from './babies/BabiesList'
 import Header from './Header'
@@ -28,6 +29,7 @@ export class App extends Component {
           <Redirect from="/" to="activity_logs" />
           <Route exact path="/activity_logs" component={ActivityLogsList} />
           <Route path="/activity_logs/new" component={ActivityLogsNew} />
+          <Route path="/activity_logs/edit/:id" component={ActivityLogsEdit} />
           <Route path="/activities" component={ActivitiesList} />
           <Route path="/babies" component={BabiesList} />
           <Route path="/assistants" component={AssistantsList} />

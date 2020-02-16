@@ -1,6 +1,8 @@
 import {
   FETCHACTIVITYLOGS,
-  CREATEACTIVITYLOG
+  CREATEACTIVITYLOG,
+  EDITACTIVITYLOG,
+  FETCHACTIVITYLOG
 } from '../types'
 
 export default (state={}, action) => {
@@ -9,6 +11,10 @@ export default (state={}, action) => {
       return {...state, activityLogs: action.payload}
     case CREATEACTIVITYLOG:
       return {...state, newActivityLog: action.payload}
+    case EDITACTIVITYLOG:
+      return {...state, editActivityLog: action.payload}
+    case FETCHACTIVITYLOG:
+      return {...state, activityLog: action.payload}
     default:
       return state;
   }

@@ -6,7 +6,9 @@ import {
   FETCHASSISTANTS,
   FETCHBABIES,
   FETCHACTIVITYLOGS,
-  CREATEACTIVITYLOG
+  CREATEACTIVITYLOG,
+  EDITACTIVITYLOG,
+  FETCHACTIVITYLOG
 } from '../types'
 
 
@@ -34,6 +36,15 @@ export const fetchAssistants = () => async dispatch => {
   dispatch({
     type: FETCHASSISTANTS,
     payload: assistants.data
+  })
+}
+
+export const fetchActivityLog = id => async dispatch => {
+  const activityLog = await babies_api.get(`/activity_logs/${id}`);
+
+  dispatch({
+    type: FETCHACTIVITYLOG,
+    payload: activityLog.data
   })
 }
 
@@ -82,5 +93,32 @@ export const createActivityLog = (baby_id, assistant_id, activity_id, start_time
     type: CREATEACTIVITYLOG,
     payload: activity_log
   })
+}
 
+export const updateActivityLog = (id, comments, stop_time) => async dispatch => {
+  const activity_log_edit = await babies_api.put(`/activity_logs/${id}`, {
+    comments,
+    stop_time
+  })
+
+  if (activity_log_edit.data.status === 422) {
+    Swal.fire(
+      'Error!!',
+      activity_log_edit.data.data.stop_time[0],
+      'error'
+    )
+    history.push(`/activity_logs/edit/${id}`)
+  } else {
+    Swal.fire(
+      'Success!!',
+      'You have successfuly finished this activity.',
+      'success'
+    )
+    history.push('/activity_logs')
+  }
+
+  dispatch({
+    type: EDITACTIVITYLOG,
+    payload: activity_log_edit 
+  })
 }

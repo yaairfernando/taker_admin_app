@@ -38,10 +38,19 @@ const Table = ({ records }) => {
                 <td>{r.assistant}</td>
                 <td>{r.activity}</td>
                 <td>{r.start_time}</td>
-                <td>{r.stop_time}</td>
-                <td>{r.duration}</td>
+                <td>
+                  {r.stop_time === "Terminada" ? <h6><span class="badge badge-success">{r.stop_time}</span></h6> :
+                    <h6><span class="badge badge-info">{r.stop_time}</span></h6>
+                  }
+                </td>
+                <td>
+                {r.duration === "*" ? <span>{r.duration}</span> : <span>{r.duration} min</span> }
+            
+                </td>
                 <td className="acciones">
-                  {r.stop_time === "Progreso" ? <Link to={`activity_logs/edit/${r.id}`} className="btn btn-primary mr-2" >Finish</Link> : null }
+                  {r.stop_time === "Progreso" ? <Link to={`activity_logs/edit/${r.id}`} className="btn btn-primary mr-2" >Finish</Link> : 
+                  <h6><span className="badge badge-secondary">No action</span></h6>
+                  }
                 </td>
               </tr>
             )
