@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 const Container = styled.div`
   margin: 0 auto;
@@ -15,6 +16,7 @@ const Table = ({ records }) => {
   return (
     <Container className="mt-4">
       <Link to="/activity_logs/new" className="btn btn-info mb-2">New</Link>
+      <Search />
       {typeof records === 'string' ? <div>{records}</div> : null}
       <table className="table table-striped mt-4">
         <thead className="bg-primary text-white">
