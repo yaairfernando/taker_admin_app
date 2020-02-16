@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateActivityLog, fetchActivityLog, fetchActivityLogs } from '../../actions'
 import TimePicker from 'react-time-picker';
 import Swal from 'sweetalert2';
+import Spinner from '../Spinner'
 
 class ActivityLogsEdit extends Component {
 
@@ -44,7 +45,7 @@ class ActivityLogsEdit extends Component {
 
   render() {
     if (!this.props.activityLog) {
-      return <div>Loading...</div>
+      return <Spinner />
     }
     const { data } = this.props.activityLog
     return (
