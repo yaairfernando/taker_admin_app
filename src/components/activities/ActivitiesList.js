@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { fetchActivities } from '../../actions'
 import Table from './Table';
 
 export class activitiesList extends Component {
@@ -24,4 +23,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchActivities })(activitiesList)
+export default connect(mapStateToProps)(activitiesList)
