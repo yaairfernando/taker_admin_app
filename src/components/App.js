@@ -5,6 +5,7 @@ import { fetchActivities, fetchActivityLogs, fetchBabies, fetchAssistants } from
 import { Route, Router, Redirect } from 'react-router-dom';
 import ActivitiesList from './activities/ActivitiesList'
 import ActivityLogsList from './activity_logs/ActivityLogsList'
+import ActivityLogsNew from './activity_logs/ActivityLogsNew'
 import AssistantsList from './assistants/AssistantsList'
 import BabiesList from './babies/BabiesList'
 import Header from './Header'
@@ -26,9 +27,11 @@ export class App extends Component {
           <Header />
           <Redirect from="/" to="activity_logs" />
           <Route exact path="/activity_logs" component={ActivityLogsList} />
+          <Route path="/activity_logs/new" component={ActivityLogsNew} />
           <Route path="/activities" component={ActivitiesList} />
           <Route path="/babies" component={BabiesList} />
           <Route path="/assistants" component={AssistantsList} />
+          
         </Router>
       </div>
     )

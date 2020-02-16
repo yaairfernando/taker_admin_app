@@ -34,14 +34,13 @@ class Search extends Component {
 
   render() {
     const { babies, assistants } = this.props;
-    console.log(babies)
     return (
       <form onSubmit={this.onSubmit}>
         <div className="form-row">
           <div className="col-3">
             <select className="form-control" value={this.state.baby} onChange={this.handleChangeBaby} >
               <option value="">SELECT A BABY</option>
-              {babies ? babies.babies.data.map((baby, index) => (
+              {babies ? babies.data.map((baby, index) => (
                 <option value={baby.id} key={index}>{baby.name}</option>
               )) : null}
             </select>
@@ -49,7 +48,7 @@ class Search extends Component {
           <div className="col-3">
             <select className="form-control" value={this.state.assistant} onChange={this.handleChangeAssistant} >
               <option value="">SELECT AN ASSISTANT</option>          
-              {assistants ? assistants.assistants.data.map((assistant, index) => (
+              {assistants ? assistants.data.map((assistant, index) => (
                 <option value={assistant.id} key={index}>{assistant.name}</option>
               )) : null}
             </select>   
@@ -74,8 +73,8 @@ class Search extends Component {
 
 const mapStateToProps = state => {
   return {
-    babies: state.babies,
-    assistants: state.assistants
+    babies: state.babies.babies,
+    assistants: state.assistants.assistants
   }
 }
 
