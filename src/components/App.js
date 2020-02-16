@@ -35,11 +35,5 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    
-  }
-}
-
-export default connect(mapStateToProps, { fetchActivities, fetchActivityLogs, fetchAssistants, fetchBabies})(App)
+export default connect(null, { fetchActivities, fetchActivityLogs, fetchAssistants, fetchBabies})(App)
 
