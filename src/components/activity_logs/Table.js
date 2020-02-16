@@ -39,8 +39,8 @@ const Table = ({ records }) => {
                 <td>{r.activity}</td>
                 <td>{r.start_time}</td>
                 <td>
-                  {r.stop_time === "Terminada" ? <h6><span class="badge badge-success">{r.stop_time}</span></h6> :
-                    <h6><span class="badge badge-info">{r.stop_time}</span></h6>
+                  {r.stop_time === "Terminada" ? <h6><span className="badge badge-success">{r.stop_time}</span></h6> :
+                    <h6><span className="badge badge-info">{r.stop_time}</span></h6>
                   }
                 </td>
                 <td>

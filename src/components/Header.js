@@ -37,7 +37,7 @@ const HeaderContainer = styled.header`
           top: 50px;
           margin: 0 auto;
           width: 0;
-          height: 2px;
+          height: 3px;
           background: #9aceff;
           transition: width 0.15s;
         }
@@ -46,7 +46,7 @@ const HeaderContainer = styled.header`
           display: block;
           left: 15%;
           width: 70%;
-          height: 2px;
+          height: 3px;
           background-color: #fff;
           content: " ";
           transition: width 0.15s;
