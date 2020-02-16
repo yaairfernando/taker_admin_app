@@ -14,13 +14,15 @@ const Container = styled.div`
 const Table = ({ data }) => {
   return (
     <Container className="mt-4">
-      <Link to="/assistants/new" className="btn btn-info mb-2">New</Link>
+      <Link to="/babies/new" className="btn btn-info mb-2">New</Link>
       <table className="table table-striped mt-4">
         <thead className="bg-primary text-white">
           <tr>
             <th>ID</th>
             <th>NAME</th>
-            <th>GROUP</th>
+            <th>BIRTHDAY</th>
+            <th>MOTHER</th>
+            <th>FATHER</th>
             <th>ADDRESS</th>
             <th>PHONE</th>
             <th>ACTIONS</th>
@@ -32,11 +34,13 @@ const Table = ({ data }) => {
               <tr key={index}>
                 <td>{r.id}</td>
                 <td>{r.name}</td>
-                <td>{r.group}</td>
+                <td>{r.birthday}</td>
+                <td>{r.mother}</td>
+                <td>{r.father}</td>
                 <td>{r.address}</td>
                 <td>{r.phone}</td>
                 <td className="actions d-flex align-items-center">
-                  <Link to={`assistants/edit/${r.id}`} className="w-100 btn btn-sm btn-outline-primary mr-2" >Edit</Link>
+                  <Link to={`babies/edit/${r.id}`} className="w-100 btn btn-sm btn-outline-primary mr-2" >Edit</Link>
                   <button className="w-100 btn btn-sm btn-outline-danger mr-2" >Delete</button>
                 </td>
               </tr>

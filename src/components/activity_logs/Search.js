@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchActivityLogs } from '../../actions'
+import styled from 'styled-components';
+
+const ActionsContainer = styled.div`
+  & > button {
+    width: 145px;
+  }
+`
 
 class Search extends Component {
   state = {
@@ -61,10 +68,10 @@ class Search extends Component {
               <option value="0">Progress</option>
             </select>
           </div>
-          <div className="d-flex w-25 justify-content-around">
+          <ActionsContainer className="d-flex w-25 justify-content-around">
             <button type="button" onClick={this.onReset} className="btn btn-success mb-2">Reset</button>
             <button type="submit" className="btn btn-primary mb-2 ml-1">Filter</button>
-          </div>
+          </ActionsContainer>
         </div>
       </form>
     )

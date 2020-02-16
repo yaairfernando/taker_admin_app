@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Table from './Table'
 import { fetchActivityLogs } from '../../actions'
+import Spinner from '../Spinner'
 
 export class ActivityLogsList extends Component {
   render() {
@@ -11,9 +12,7 @@ export class ActivityLogsList extends Component {
       return <Table records={records} />
     }
     return (
-      <div>
-        Loading....
-      </div>
+      <Spinner />
     )
   }
 }

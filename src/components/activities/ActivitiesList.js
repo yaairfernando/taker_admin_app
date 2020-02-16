@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Table from './Table';
+import Spinner from '../Spinner'
 
 export class activitiesList extends Component {
   render() {
@@ -10,9 +11,7 @@ export class activitiesList extends Component {
       return <Table data={data} />
     }
     return (
-      <div>
-        Loading....
-      </div>
+      <Spinner />
     )
   }
 }
