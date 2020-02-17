@@ -68,7 +68,7 @@ The project was developed using the following technologies:
 
 <p>To run the api go and follow the instruction here</p>
 
-[https://github.com/YairFernando67/taker_api](https://github.com/YairFernando67/taker_api)
+[Taker Api](https://github.com/YairFernando67/taker_api)
 
 
 <p>To run the client:</p>
